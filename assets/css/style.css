@@ -2,8 +2,9 @@ body {
     background-color: black;
     background-image: url(../images/background-image.jpg);
     background-attachment: fixed;
-    background-position: top, right;
+    background-position: top right;
     background-repeat: no-repeat;
+    background-size: 80%;
 }
 
 p {
