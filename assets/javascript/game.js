@@ -1,12 +1,17 @@
 // alert box
-alert("Recommended: For best user experience play game in  your browsers full screen mode.");
+// alert("Recommended: For best user experience play game in  your browsers full screen mode.");
 
 // variables
 
     //characters {name: "", img: "", hp: "", ap: "", ca: ""}
-
-    //chosen player
-    //chosen enemy 
+var characters = [
+    {name: 'Luke Skywalker', img: '../../images/Luke_Skywalker.jpg', hp: 100, ap: 15, ca: 15},
+    {name: 'Master Yoda', img: '../../images/Yoda.jpg', hp: 80, ap: 25, ca: 25},
+    {name: 'Darth Sidious', img: '../../images/Darth_Sidious.jpg', hp: 140, ap: 20, ca: 20},
+    {name: 'Darth Vader', img: '../../images/Darth_Vader.jpg', hp: 180, ap: 25, ca: 25},
+];
+var playerIsChosen = false;
+var enemyIsChosen = false;
 
 // display characters in starting area
 

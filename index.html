@@ -17,51 +17,101 @@
 </head>
 <body>
     
-    <div class="container">
+<div class="container">
        
         <!-- link to gameplay scrolling title instructions  -->
         <div class="row">
-            <h1>
+            <h2>
                 <a id="link" href="./instructions.html">
                     CLICK HERE FOR INSTRUCTIONS
                 </a>
-            </h1>
+            </h2>
             
         </div>
 
-<!-- big gameplay area -->
+     <!-- main gameplay area -->
+        
+        <!-- invisible content to maybe push everything down a bit -->
+        <div class="invisible">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+        </div>
+        <div class="row">
+        
+            <!-- left side -->
+            <div class="col-md-6">
+            
+                <!-- character starting area -->
 
-<!-- left side -->
-    <!-- character starting area -->
+                <div id="allCharacters"></div>
+
+                <br>
+
+                <!-- chosen character area -->
+                <div class="box">
+                    <h1 class="display">YOUR CHARACTER</h1>
+                    <div id="yourCharacter"></div>
+                </div>
+                <br>
+
+                <!-- enemy area -->
+                <div class="box">
+                    <h1 class="display">YOUR OPPONENT</h1>
+                    <div id="enemy"></div>
+                </div>
+                <br>
+
+            </div>
+            <!-- right side -->
+            <div class="col-md-6">
+                <br>
+                <!-- remaining opponents -->
+                <div class="box">
+                    <h1 class="display">REMAINING ENEMIES</h1>
+                    <div id="availableEnemies"></div>
+                </div>
+                <br>
+
+                <!-- fight to the death! -->
+                <div class="box">
+                    <h1 class="display">BATTLE</h1>
+                    <!-- attack button -->
+                    <button type="button" class="btn btn-outline-danger btn-lg btn-block" id="attack">ATTACK</button>
+                    <br>
+                    <br>
+                </div>
+                <br>
+
+                <!-- results text -->
+                <p id="gameText"></p>
+            </div>
+         <!-- end gameplay area -->
+        </div>
 
 
-    <!-- chosen character area -->
+        <!-- jQuery core cdn link -->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
-
-    <!-- enemy area -->
-
-
-<!-- right side -->
-    <!-- remaining opponents -->
-
-
-    <!-- fight to the death! -->
-
-
-    <!-- results text -->
-
-
-<!-- end gameplay area -->
-
-<!-- jQuery core cdn link -->
-<script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-
-<!-- javascript file link -->
-<script src="./assets/javascript/game.js"></script>
-    </div>
+        <!-- javascript file link -->
+        <script src="./assets/javascript/game.js"></script>
+</div>
 
 </body>
 </html>

@@ -18,6 +18,28 @@ p {
     font-family: 'Archivo Narrow', sans-serif;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
+.box {
+    border-style: dotted;
+    padding: 10px;
+    border-color: rgb(253, 247, 197);
+    border-width: 5px;
+}
+
+.display {
+    color: yellow;
+    font-family: 'Archivo Narrow', sans-serif;
+    text-align: center;
+}
+
+.btn {
+    float: right;
+    size: 200%;
+}
+
 /* this stuff is for the scrolling instructions */
 #titles {
     position: absolute;
@@ -57,4 +79,5 @@ p {
     0% { top: 100%; }
     100% { top: -170%; }
 }
+
 
