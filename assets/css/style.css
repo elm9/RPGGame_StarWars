@@ -2,11 +2,58 @@ body {
     background-color: black;
     background-image: url(../images/background-image.jpg);
     background-attachment: fixed;
-    background-position: right;
+    background-position: top, right;
     background-repeat: no-repeat;
 }
 
-#instructionsLink {
+p {
+    color: yellow;
+    font-family: 'Archivo Narrow', sans-serif;
+    
+}
+
+#link {
     color: yellow;
     font-family: 'Archivo Narrow', sans-serif;
 }
+
+/* this stuff is for the scrolling instructions */
+#titles {
+    position: absolute;
+    width: 18em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 350%;
+    font-weight: bold;
+    font-family: 'Archivo Narrow', sans-serif;
+    color: yellow;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px);
+}
+
+#titles:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+#titlecontent {
+    position: absolute;
+    top: 100%;
+    animation: scroll 100s linear 4s infinite;
+}
+
+@keyframes scroll {
+    0% { top: 100%; }
+    100% { top: -170%; }
+}
+

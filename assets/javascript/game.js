@@ -1,4 +1,5 @@
-
+// alert box
+alert("It is recommended to play this game in your browsers full screen mode.");
 
 // variables
 
