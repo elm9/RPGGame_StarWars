@@ -1,6 +1,12 @@
 body {
-    
-    background-image: url(../images/BACKGROUND\ IMAGE\ star-wars-episode-vi_-return-of-the-jedi-wallpapers-29929-6793784.jpg);
+    background-color: black;
+    background-image: url(../images/background-image.jpg);
     background-attachment: fixed;
     background-position: right;
+    background-repeat: no-repeat;
+}
+
+#instructionsLink {
+    color: yellow;
+    font-family: 'Archivo Narrow', sans-serif;
 }
