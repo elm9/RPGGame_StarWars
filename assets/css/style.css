@@ -8,7 +8,7 @@ body {
 }
 
 p {
-    color: yellow;
+    
     font-family: 'Archivo Narrow', sans-serif;
     
 }
@@ -22,17 +22,21 @@ p {
     visibility: hidden;
 }
 
-.box {
+/* .box {
     border-style: dotted;
     padding: 10px;
     border-color: rgb(253, 247, 197);
     border-width: 5px;
-}
+} */
 
 .display {
     color: yellow;
     font-family: 'Archivo Narrow', sans-serif;
     text-align: center;
+    border-style: dotted;
+    padding: 10px;
+    border-color: rgb(253, 247, 197);
+    border-width: 5px;
 }
 
 .btn {
@@ -40,7 +44,25 @@ p {
     size: 200%;
 }
 
-/* this stuff is for the scrolling instructions */
+.characterImage {
+    width: 250px;
+}
+
+.characterButton {
+    
+}
+
+#allCharacters {
+
+}
+
+
+
+
+
+
+
+/* this stuff is for the rolling title instructions */
 #titles {
     position: absolute;
     width: 18em;
@@ -72,7 +94,7 @@ p {
 #titlecontent {
     position: absolute;
     top: 100%;
-    animation: scroll 100s linear 4s infinite;
+    animation: scroll 100s linear 0s infinite;
 }
 
 @keyframes scroll {
