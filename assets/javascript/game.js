@@ -6,10 +6,10 @@ $(document).ready(function(){
 
     //characters {name: "", img: "", hp: "", ap: "", ca: ""}
     var characters = [
-        {name: 'Luke Skywalker', img: 'assets/images/Luke_Skywalker.jpg', hp: 100, ap: 15, ca: 15},
-        {name: 'Master Yoda', img: 'assets/images/Yoda.jpg', hp: 80, ap: 25, ca: 25},
-        {name: 'Darth Sidious', img: 'assets/images/Darth_Sidious.jpg', hp: 140, ap: 20, ca: 20},
-        {name: 'Darth Vader', img: 'assets/images/Darth_Vader.jpg', hp: 180, ap: 25, ca: 25},
+        {name: 'Luke Skywalker', img: 'assets/images/Luke_Skywalker.jpg', hp: 120, ap: 15, ca: 15},
+        {name: 'Master Yoda', img: 'assets/images/Yoda.jpg', hp: 100, ap: 10, ca: 10},
+        {name: 'Darth Sidious', img: 'assets/images/Darth_Sidious.jpg', hp: 130, ap: 20, ca: 20},
+        {name: 'Darth Vader', img: 'assets/images/Darth_Vader.jpg', hp: 140, ap: 15, ca: 15},
     ];
     var playerIsChosen = false;
     var enemyIsChosen = false;
@@ -56,7 +56,7 @@ $(document).ready(function(){
         if (!enemyIsChosen) {
             $('#gameText').empty();
             var enemy = $(this);
-            enemy.addClass('defenderButton').removeClass('possibleEnemies');
+            enemy.addClass('enemyButton').removeClass('possibleEnemies');
             $('#enemy').append(enemy);
             enemyIsChosen = true;
             var p = $('<p>');
