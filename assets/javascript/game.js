@@ -37,7 +37,7 @@ $(document).ready(function(){
     $(document).on('click', '.characterButton', function() {
         if (!playerIsChosen) {
             $('#gameText').empty();
-            $('.display').show();
+            $('.display').show(); 
             var player = $(this);
             player.addClass('player');
             $('#yourCharacter').append(player);
@@ -50,7 +50,18 @@ $(document).ready(function(){
     });
     
     // choose enemy
-    
+    $(document).on('click', '.possibleEnemies', function() {
+        if (!enemyIsChosen) {
+            $('#gameText').empty();
+            var enemy = $(this);
+            enemy.addClass('defenderButton').removeClass('possibleEnemies');
+            $('#enemy').append(enemy);
+            enemyIsChosen = true;
+            var p = $('<p>');
+            p.append('Attack!');
+            $('#gameText').append(p);	
+        }
+    });
     
         // attack button
             // check if player and enemy have been chosen, if so:
