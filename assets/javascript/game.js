@@ -18,6 +18,7 @@ $(document).ready(function(){
     // get some variables in there to make this easier
     function start(){
         $('.display').hide();
+        $('.box').hide();
         for (var i = 0; i < characters.length; i++) {
             var b = $('<button>');
             b.addClass('characterButton');
@@ -38,6 +39,7 @@ $(document).ready(function(){
         if (!playerIsChosen) {
             $('#gameText').empty();
             $('.display').show(); 
+            $('.box').show();
             var player = $(this);
             player.addClass('player');
             $('#yourCharacter').append(player);
@@ -63,21 +65,100 @@ $(document).ready(function(){
         }
     });
     
-        // attack button
-            // check if player and enemy have been chosen, if so:
+        // attack button lets goooooooo
+        $(document).on('click', '#attack', function() {
+            var playerName = $('#yourCharacter').children().attr('name');
+            var playerHP = $('#yourCharacter').children().attr('hp');	
+            var playerAP = $('#yourCharacter').children().attr('ap');
+            var enemyName = $('#enemy').children().attr('name');
+            var enemyHP = $('#enemy').children().attr('hp');
+            var enemyCA = $('#enemy').children().attr('ca');
+            // check if player and enemy have been chosen and make sure you haven't lost yet, if so:
+            if (playerIsChosen && enemyIsChosen && playerHP > 0) {
+                $('#gameText').empty();	
+                
                 // player attacks enemy == (enemy HP) - (player AP)
+                enemyHP -= playerAP;
+                $('#enemy').children().attr('hp', enemyHP);
+                $('#enemy .hpDisplay').text("HP: " + enemyHP);
+                
                 // enemy counter attacks player == (player HP) - (enemy CA)
+                playerHP -= enemyCA;
+                $('#yourCharacter').children().attr('hp', playerHP);
+                $('#yourCharacter .hpDisplay').text("HP: " + playerHP);
+                var p = $('<p>');
+                p.append("You attacked " + enemyName + " for " + playerAP + " damage.<br>" + enemyName + " attacked you back for " + enemyCA + " damage.");
+                $('#gameText').append(p);
+                
                 // increase player's AP by base AP
+                if ($('#yourCharacter').children().length > 0 && $('#enemy').children().length > 0 && playerHP > 0) {
+                    for (var i = 0; i < characters.length; i++) {
+                        if (characters[i].name == playerName) {
+                            var basePlayerAP = characters[i].ap;
+                        }				 
+                    }
+                    playerAP = parseInt(playerAP) + parseInt(basePlayerAP);
+                    $('#yourCharacter').children().attr('ap', playerAP);
+                    //hey, let's console log this
+                    console.log(playerAP);
+                }
                 // if enemy's HP < or = 0 remove character and choose new enemy
+                if (enemyHP <= 0) {
+                    $('#gameText').empty();
+                    $('#enemy').empty();
+                    enemyIsChosen = false;
+                    var p = $('<p>');
+                    p.append('You have defeated ' + enemyName + '. CHOOSE YOUR NEXT OPPONENT.');
+                    $('#gameText').append(p);
+                }
                 // player wins by defeating all enemies 
+                if ($('#availableEnemies').children().length == 0 && $('#enemy').children().length == 0 && playerIsChosen ) {
+                    $('#gameText').empty();
+                    $('#attack').hide();
+                    var p = $('<p>');
+                    p.append('YOU WON!!!!!!!!!!');
+                    
                     // restart button appears
+                    var br = $('<br>');
+                    p.append(br);
+                    var b = $('<button>Restart</button>');
+                    b.addClass('btn btn-outline-danger btn-lg btn-block raised restart');
+                    p.append(b);
+                    $('#gameText').append(p);
+                }
                 // player loses if HP < or = 0
+                if (playerHP <= 0) {
+                    $('#gameText').empty();
+                    $('#attack').hide();
+                    var p = $('<p>');
+                    p.append('YOU LOSE!!!!!!!!!');
+                   
                     // restart button appears
+                    var br = $('<br>');
+                    p.append(br);
+                    var b = $('<button>Restart</button>');
+                    b.addClass('btn btn-outline-danger btn-lg btn-block raised restart');
+                    p.append(b);
+                    $('#gameText').append(p);
+                }
             //if player is chosen, enemy is not chosen, and there are enemies still alive:
-                // please choose an enemy! notification
+            // choose an opponent! notification
+            } else if (playerIsChosen && !enemyIsChosen && $('#availableEnemies').children().length > 0) {
+                $('#gameText').empty();
+                var p = $('<p>');
+                p.append('CHOOSE YOUR OPPONENT!!!!!');
+                $('#gameText').append(p);
+            } else if (!playerIsChosen) {
+                $('#gameText').empty();
+                var p = $('<p>');
+                p.append('CHOOSE YOUR CHARACTER!!!!!!!!!!');
+                $('#gameText').append(p);
+            }
+        });
+
     
-    
-        // restart button
+        // now let's restart because this game is too good not to play over and over again :-)
+
         
     
     //start game function

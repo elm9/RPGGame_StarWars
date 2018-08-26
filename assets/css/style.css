@@ -14,7 +14,7 @@ p {
 }
 
 #link {
-    color: yellow;
+    color: rgb(255, 230, 0);
     font-family: 'Archivo Narrow', sans-serif;
 }
 
@@ -22,21 +22,21 @@ p {
     visibility: hidden;
 }
 
-/* .box {
+.box {
     border-style: dotted;
     padding: 10px;
     border-color: rgb(253, 247, 197);
     border-width: 5px;
-} */
+}
 
 .display {
-    color: yellow;
+    color: rgb(255, 230, 0);
     font-family: 'Archivo Narrow', sans-serif;
     text-align: center;
-    border-style: dotted;
+    /* border-style: dotted;
     padding: 10px;
     border-color: rgb(253, 247, 197);
-    border-width: 5px;
+    border-width: 5px; */
 }
 
 .btn {
@@ -50,9 +50,11 @@ p {
 
 
 #gameText {
-    color: red;
+    color: rgb(255, 230, 0);
     font-family: 'Archivo Narrow', sans-serif;
     font-size: 70px;
+    text-shadow: 0 0 50px red;
+    
 }
 
 
@@ -71,7 +73,7 @@ p {
     font-size: 350%;
     font-weight: bold;
     font-family: 'Archivo Narrow', sans-serif;
-    color: yellow;
+    color: rgb(255, 230, 0);
     text-align: justify;
     overflow: hidden;
     transform-origin: 50% 100%;
