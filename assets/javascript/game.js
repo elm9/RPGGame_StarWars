@@ -1,5 +1,5 @@
 // alert box
-// alert("Recommended: For best user experience play game in  your browsers full screen mode.");
+alert("Recommended: For best user experience play game in  your browsers full screen mode.");
 
 $(document).ready(function(){
 // variables
