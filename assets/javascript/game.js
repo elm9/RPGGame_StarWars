@@ -158,7 +158,16 @@ $(document).ready(function(){
 
     
         // now let's restart because this game is too good not to play over and over again :-)
-
+        $(document).on('click', '.restart', function() {
+            playerIsChosen = false;
+            enemyIsChosen = false;
+            $('#allCharacters').empty();
+            $('#yourCharacter').empty();
+            $('#enemy').empty();
+            $('#availableEnemies').empty();
+            $('#gameText').empty();
+            start();
+        });
         
     
     //start game function
