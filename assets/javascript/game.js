@@ -20,7 +20,7 @@ $(document).ready(function(){
         $('.display').hide();
         for (var i = 0; i < characters.length; i++) {
             var b = $('<button>');
-            b.addClass('character');
+            b.addClass('characterButton');
             b.attr('name', characters[i].name);
             b.attr('hp', characters[i].hp);
             b.attr('ap', characters[i].ap);
@@ -29,12 +29,25 @@ $(document).ready(function(){
             $('#allCharacters').append(b);
         }
         var p = $('<p>');
-        p.append('Choose your character.');
+        p.append('CHOOSE YOUR CHARACTER.');
         $('#gameText').append(p);
     }
     
     // choose player
-    
+    $(document).on('click', '.characterButton', function() {
+        if (!playerIsChosen) {
+            $('#gameText').empty();
+            $('.display').show();
+            var player = $(this);
+            player.addClass('player');
+            $('#yourCharacter').append(player);
+            playerIsChosen = true;
+            $('#availableEnemies').append($('#allCharacters').children().addClass('possibleEnemies'));
+            var p = $('<p>');
+            p.append('CHOOSE YOUR OPPONENT.');
+            $('#gameText').append(p);
+        }
+    });
     
     // choose enemy
     
