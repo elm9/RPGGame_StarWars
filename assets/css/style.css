@@ -46,7 +46,8 @@ p {
 }
 
 .characterImage {
-    width: 250px;
+    width: 75%;
+    height: auto;
 }
 
 .characterButton {
