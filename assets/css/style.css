@@ -48,6 +48,30 @@ p {
     width: 250px;
 }
 
+.characterButton {
+    background-color: peachpuff;
+    border-style: groove;
+    border-color: green;
+    border-width: 10px;
+    font-size: 25px;
+}
+
+.possibleEnemies {
+    background-color: black;
+    border-style: groove;
+    border-width: 10px;
+    border-color: red;
+    color: white;
+}
+
+.enemyButton {
+    background-color: black;
+    border-style: groove;
+    border-width: 10px;
+    border-color: green;
+    color: white;
+}
+
 
 #gameText {
     color: rgb(255, 230, 0);
