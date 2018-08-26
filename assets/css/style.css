@@ -90,6 +90,7 @@ p {
 
 /* this stuff is for the rolling title instructions */
 #titles {
+    padding: 10px;
     position: absolute;
     width: 18em;
     height: 50em;
